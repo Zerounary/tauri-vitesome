@@ -13,7 +13,7 @@ import Pages from 'vite-plugin-pages'
 export default defineConfig({
   clearScreen: false,
   server: {
-    port: 4000,
+    port: 19999,
     strictPort: true,
   },
   resolve: {
