@@ -42,7 +42,7 @@
       "targets": "all",
       "windows": {
         "webviewInstallMode": {
-          "type": "offlineInstaller"
+          "type": "embedBootstrapper"
         },
         "wix": {
           "language": "zh-CN"
