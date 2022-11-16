@@ -14,6 +14,7 @@ import messages from '@intlify/vite-plugin-vue-i18n/messages';
 
 // Pinia
 import {createPinia} from "pinia";
+import piniaPersist from 'pinia-plugin-persist'
 
 const i18n = createI18n({
   locale: 'en',
@@ -30,6 +31,8 @@ app.use(i18n);
 
 app.use(Router);
 
-app.use(createPinia())
+const pinia = createPinia()
+pinia.use(piniaPersist)
+app.use(pinia)
 
 app.mount('#app');
