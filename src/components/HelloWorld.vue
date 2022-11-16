@@ -3,12 +3,18 @@ import { useI18n } from 'vue-i18n';
 import { defineProps } from 'vue';
 import { useCounterStore } from '@/stores/counter';
 import { storeToRefs } from 'pinia';
+import { hide, getName } from '@tauri-apps/api/app';
+
 
 const props = defineProps({
   msg: {
     type: String,
     required: true,
   },
+});
+
+getName().then(res => {
+  console.log('🚀 ~ file: HelloWorld.vue ~ line 16 ~ name', res)
 });
 
 const { t } = useI18n();
@@ -18,6 +24,10 @@ const counterStore = useCounterStore();
 const { count } = storeToRefs(counterStore);
 
 const { increment } = counterStore;
+
+const hideApp = () => {
+  hide();
+};
 </script>
 <template>
   <div class="text-center text-md">
@@ -42,6 +52,9 @@ const { increment } = counterStore;
     <button class="bg-blue-400 px-2 py-1 text-white rounded" @click="increment">
       <span class="text-xl">{{ count }}</span>
       <span class="text-xl">{{ t('click-me') }}</span>
+    </button>
+    <button class="bg-blue-400 px-2 py-1 text-white rounded" @click="hideApp">
+      <span class="text-xl">Hide</span>
     </button>
     <p class="mb-10">
       <a href="https://vitejs.dev/guide/features.html" target="_blank">

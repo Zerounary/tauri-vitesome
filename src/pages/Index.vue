@@ -22,6 +22,12 @@ setTimeout(() => {
 invoke('greet', { name: 'World' })
   // `invoke` 返回的是一个 Promise
   .then(response => console.log(response));
+
+document.addEventListener('DOMContentLoaded', () => {
+  // This will wait for the window to load, but you could
+  // run this function on whatever trigger you want
+  invoke('close_splashscreen')
+})
 </script>
 <template>
   <div class="container max-w-3xl mx-auto mt-60">
