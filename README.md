@@ -84,7 +84,7 @@ yarn
 ### Use it
 
 ```
-yarn dev
+cargo tauri dev
 ```
 
 This will serve the app at [http://localhost:3260](http://localhost:3260)
@@ -92,7 +92,7 @@ This will serve the app at [http://localhost:3260](http://localhost:3260)
 ### Build it
 
 ```
-yarn build
+cargo tauri build
 ```
 
 Builds the app for production to the `dist` folder.<br>
