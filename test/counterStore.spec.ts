@@ -1,4 +1,4 @@
-import { expect, beforeEach, it } from 'vitest';
+import { expect, beforeEach, it, vi } from 'vitest';
 import { setActivePinia, createPinia } from 'pinia';
 import { useCounterStore } from '../src/stores/counter';
 

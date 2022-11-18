@@ -1,3 +1,4 @@
+import { storage } from "@/utils"
 import { defineStore } from "pinia"
 
 
@@ -12,13 +13,13 @@ export const useCounterStore = defineStore('counter', {
       this.count++
     },
   },
-  // persist: {
-  //   enabled: true,
-  //   strategies: [
-  //     {
-  //       key: 'count',
-  //       storage: localStorage,
-  //     },
-  //   ],
-  // },
+  persist: {
+    enabled: true,
+    strategies: [
+      {
+        key: 'count',
+        storage,
+      },
+    ],
+  },
 })
